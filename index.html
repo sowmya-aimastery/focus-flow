@@ -1,0 +1,57 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Focus Flow</title>
+<link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="app">
+    <header>
+      <h1>Focus Flow</h1>
+      <div class="streak" id="streak">🔥 0 sessions today</div>
+    </header>
+
+    <main>
+      <section class="timer-card" id="timerCard">
+        <div class="mode-tabs">
+          <button class="mode-tab active" data-mode="focus">Focus</button>
+          <button class="mode-tab" data-mode="short">Short Break</button>
+          <button class="mode-tab" data-mode="long">Long Break</button>
+        </div>
+
+        <div class="ring-wrap">
+          <svg class="ring" viewBox="0 0 200 200">
+            <circle class="ring-bg" cx="100" cy="100" r="90"></circle>
+            <circle class="ring-progress" id="ringProgress" cx="100" cy="100" r="90"></circle>
+          </svg>
+          <div class="time-display" id="timeDisplay">25:00</div>
+        </div>
+
+        <div class="active-task" id="activeTask">No task selected</div>
+
+        <div class="controls">
+          <button class="btn secondary" id="resetBtn">Reset</button>
+          <button class="btn primary" id="startPauseBtn">Start</button>
+          <button class="btn secondary" id="skipBtn">Skip</button>
+        </div>
+      </section>
+
+      <section class="tasks-card">
+        <h2>Tasks</h2>
+        <form id="taskForm" class="task-form">
+          <input type="text" id="taskInput" placeholder="What are you working on?" autocomplete="off" maxlength="80">
+          <button type="submit" class="btn primary small">Add</button>
+        </form>
+        <ul class="task-list" id="taskList"></ul>
+      </section>
+    </main>
+
+    <div class="celebrate" id="celebrate"></div>
+  </div>
+
+  <audio id="chime" preload="auto"></audio>
+  <script src="app.js"></script>
+</body>
+</html>
